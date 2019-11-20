@@ -30,7 +30,7 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /sbin
 RUN chmod +x /sbin/tini
 
 ARG CONFLUENCE_VERSION
-ARG DOWNLOAD_URL=https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-7.1.0.tar.gz
+ARG DOWNLOAD_URL=https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-7.0.4.tar.gz
 
 RUN groupadd --gid ${RUN_GID} ${RUN_GROUP} \
     && useradd --uid ${RUN_UID} --gid ${RUN_GID} --home-dir ${CONFLUENCE_HOME} --shell /bin/bash ${RUN_USER} \
