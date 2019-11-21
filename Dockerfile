@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=adoptopenjdk:11-hotspot
+FROM adoptopenjdk/openjdk8:slim
 FROM $BASE_IMAGE
 
 ENV RUN_USER							confluence
