@@ -1,5 +1,4 @@
 FROM adoptopenjdk/openjdk8:slim
-FROM $BASE_IMAGE
 
 ENV RUN_USER							confluence
 ENV RUN_GROUP							confluence
