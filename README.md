@@ -130,7 +130,7 @@ custom trust store, you can add them via the below environment variable
 
 Example:
 
-    docker run -e JVM_SUPPORT_RECOMMENDED_ARGS=-Djavax.net.ssl.trustStore=/var/atlassian/application-data/confluence/cacerts -v confluenceVolume:/var/atlassian/application-data/confluence --name="confluence" -d -p 8090:8090 -p 8091:8091 atlassian/confluence-server
+    docker run -e JVM_SUPPORT_RECOMMENDED_ARGS=-Djavax.net.ssl.trustStore=/var/atlassian/application-data/confluence/cacerts -v confluenceVolume:/var/atlassian/application-data/confluence --name="confluence" -d -p 8090:8090 -p 8091:8091 prepend2/confluence
 
 ## Confluence-specific settings
 
@@ -280,7 +280,7 @@ needs.
 
 #### Build a new image from the existing one
 
-* Create a new `Dockerfile`, which starts with the line e.g: `FROM atlassian/confluence-server:latest`.
+* Create a new `Dockerfile`, which starts with the line e.g: `FROM prepend2/confluence:latest`.
 * Use a `COPY` line to overwrite the provided templates.
 * Build, push and deploy the new image as above.
 
@@ -348,19 +348,13 @@ Read more about data recovery and backups: [Site Backup and Restore][11]
 # Versioning
 
 The `latest` tag matches the most recent release of Atlassian Confluence Server.
-So `atlassian/confluence-server:latest` will use the newest stable version of
+So `prepend2/confluence:latest` will use the newest stable version of
 Confluence Server available.
 
 Alternatively, you can use a specific minor version of Confluence Server by
-using a version number tag: `atlassian/confluence-server:6.13`. This will
-install the latest `6.13.x` version that is available.
+using a version number tag: `prepend2/confluence:6.15`. This will
+install the latest `6.15.x` version that is available.
 
-For the latest developer (EAP) release use
-`atlassian/confluence-server:eap`. This will install our latest milestone (not
-supported for use in production).
-
-For example, `atlassian/confluence-server:6.13-ubuntu-18.04-adoptopenjdk8` will
-install the latest 6.13.x version with AdoptOpenJDK 8.
 
 # Support
 
